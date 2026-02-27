@@ -24,4 +24,5 @@ npm run dev
 ```
 
 ## 👨‍💻 Author
-Vishnu Vardhan
+G. Sathwik
+I. Vishnu Vardhan
