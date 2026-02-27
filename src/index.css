@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 8%;
+    --foreground: 40 20% 92%;
+
+    --card: 220 18% 12%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 220 18% 14%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 40 65% 55%;
+    --primary-foreground: 220 20% 8%;
+
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 40 20% 85%;
+
+    --muted: 220 12% 16%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 40 50% 45%;
+    --accent-foreground: 40 20% 95%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 150 60% 40%;
+    --success-foreground: 150 60% 95%;
+
+    --warning: 35 90% 55%;
+    --warning-foreground: 35 90% 10%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 40 65% 55%;
+
+    --radius: 0.75rem;
+
+    --gold-glow: 40 80% 60%;
+    --gold-dim: 40 40% 30%;
+
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 40 20% 85%;
+    --sidebar-primary: 40 65% 55%;
+    --sidebar-primary-foreground: 220 20% 8%;
+    --sidebar-accent: 220 15% 16%;
+    --sidebar-accent-foreground: 40 20% 85%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 40 65% 55%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .gold-gradient {
+    background: linear-gradient(135deg, hsl(40 65% 55%), hsl(40 80% 65%), hsl(40 50% 45%));
+  }
+
+  .gold-text {
+    background: linear-gradient(135deg, hsl(40 65% 55%), hsl(40 80% 70%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-panel {
+    background: hsla(220, 18%, 12%, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(40, 65%, 55%, 0.1);
+  }
+
+  .scan-line {
+    animation: scanLine 2s ease-in-out infinite;
+  }
+
+  .pulse-gold {
+    animation: pulseGold 2s ease-in-out infinite;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+}
+
+@keyframes scanLine {
+  0%, 100% { transform: translateY(-100%); opacity: 0; }
+  50% { transform: translateY(100%); opacity: 1; }
+}
+
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 0 20px hsla(40, 65%, 55%, 0.2); }
+  50% { box-shadow: 0 0 40px hsla(40, 65%, 55%, 0.5); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
