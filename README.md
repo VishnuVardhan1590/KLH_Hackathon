@@ -22,7 +22,6 @@ The system captures live video, detects faces using face-api.js, generates facia
 npm install
 npm run dev
 ```
-
-## 👨‍💻 Author
-G. Sathwik
-I. Vishnu Vardhan
+## 👨‍💻 Authors
+- Vishnu Vardhan  
+- Sathwik
